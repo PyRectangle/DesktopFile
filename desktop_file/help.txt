@@ -1,0 +1,9 @@
+Usage: desktop-file [OPTION]... [FILE]...
+desktop-file is a tool to create desktop shortcuts for windows and linux.
+Options:
+    -h  --help                      Prints this help
+    -e  --exec          EXEC        Command or file that should be executed
+    -w  --workpath      PATH        The folder there the command should be executed in
+    -c  --comment       COMMENT     A comment for the shortcut
+    -i  --icon          ICON        Path to the icon for the file
+    -t  --categories    CATEGORIES  Categories the file should be listed in only affects linux desktop files

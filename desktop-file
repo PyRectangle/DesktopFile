@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+import os
+
+dirname = os.path.realpath(".")
+
+from desktop_file.__main__ import *
+
+os.chdir(dirname)
+Main()
