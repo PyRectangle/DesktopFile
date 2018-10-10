@@ -8,21 +8,21 @@ Then you can install it by cloning or downloading this repository and executing 
 ### Python
 You can use it in your python script like this:<br/>
 ```
->>> import desktop_file<br/>
->>> # get desktop and start menu folders<br/>
->>> desktop_file.getDesktopPath()<br/>
-/home/PyRectangle/Desktop<br/>
->>> desktop_file.getMenuPath()<br/>
-/home/PyRectangle/.local/share/applications`<br/>
->>> # create a xterm shortcut<br/>
->>> shortcut = desktop_file.Shortcut("/home/PyRectangle/Desktop", "XTerm", "/usr/bin/xterm")<br/>
->>> shortcut.setWorkingDirectory("/home/PyRectangle")<br/>
->>> shortcut.setComment("A desktop file to start xterm")<br/>
->>> # Only ".ico" files work on Windows<br/>
->>> shortcut.setIcon("/usr/share/pixmaps/mini.xterm_48x48.xpm")<br/>
->>> # Categories don't have any effects on Windows<br/>
->>> shortcut.setCategories("System;")<br/>
->>> shortcut.save()<br/>
+>>> import desktop_file
+>>> # get desktop and start menu folders
+>>> desktop_file.getDesktopPath()
+/home/PyRectangle/Desktop
+>>> desktop_file.getMenuPath()
+/home/PyRectangle/.local/share/applications`
+>>> # create a xterm shortcut
+>>> shortcut = desktop_file.Shortcut("/home/PyRectangle/Desktop", "XTerm", "/usr/bin/xterm")
+>>> shortcut.setWorkingDirectory("/home/PyRectangle")
+>>> shortcut.setComment("A desktop file to start xterm")
+>>> # Only ".ico" files work on Windows
+>>> shortcut.setIcon("/usr/share/pixmaps/mini.xterm_48x48.xpm")
+>>> # Categories don't have any effects on Windows
+>>> shortcut.setCategories("System;")
+>>> shortcut.save()
 ```
 You will find a working shortcut named "XTerm" in the folder "/home/PyRectangle/Desktop"
 
