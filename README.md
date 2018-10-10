@@ -3,7 +3,7 @@
 desktop-file is a tool to create desktop shortcuts for windows and linux.
 ## Installation
 To install desktop-file you need [python](https://www.python.org/downloads/release) 3 or later with setuptools installed.<br/>
-Then you can install it by cloning or downloading this repository and executing `python setup.py install`
+Then you can install it by cloning or downloading this repository and executing `python setup.py install`.
 ## Usage
 ### Python
 You can use it in your python script like this:<br/>
