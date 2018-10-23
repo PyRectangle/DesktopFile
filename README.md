@@ -18,7 +18,7 @@ You can use it in your python script like this:<br/>
 >>> shortcut = desktop_file.Shortcut("/home/PyRectangle/Desktop", "XTerm", "/usr/bin/xterm")
 >>> shortcut.setWorkingDirectory("/home/PyRectangle")
 >>> shortcut.setComment("A desktop file to start xterm")
->>> # Only ".ico" files work on Windows
+>>> # Only files that contain icons work on Windows
 >>> shortcut.setIcon("/usr/share/pixmaps/mini.xterm_48x48.xpm")
 >>> # Categories don't have any effects on Windows
 >>> shortcut.setCategories("System;")

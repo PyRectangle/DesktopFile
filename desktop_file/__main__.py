@@ -13,6 +13,7 @@ class Main:
         workpath = None
         comment = None
         icon = None
+        index = 0
         categories = None
         for arg in self.format[0]:
             try:
@@ -27,6 +28,8 @@ class Main:
                     comment = arg[1][0]
                 if arg[0] == "--icon":
                     icon = arg[1][0]
+                if arg[0] == "--index":
+                    index = arg[1][0]
                 if arg[0] == "--categories":
                     categories = arg[1][0]
             except IndexError:
@@ -47,8 +50,9 @@ class Main:
             shortcut = desktop_file.Shortcut(os.path.dirname(self.format[1][0]), os.path.basename(self.format[1][0].replace(".desktop", "").replace(".lnk", "")), command)
             self.setProp(workpath, shortcut.setWorkingDirectory)
             self.setProp(comment, shortcut.setComment)
-            self.setProp(icon, shortcut.setIcon)
             self.setProp(categories, shortcut.setCategories)
+            if icon != None:
+                shortcut.setIcon(icon, index)
             shortcut.save()
         else:
             print("you need to specify an exec")

@@ -7,8 +7,7 @@ def getDesktopPath():
         os.system("xdg-user-dir DESKTOP > " + output)
         path = open(output).read()
         os.remove(output)
-    except Exception as e:
-        print(e)
+    except:
         path = os.path.expanduser("~/Desktop")
     stringList = list(path)
     while stringList[-1] == "\n":
@@ -31,7 +30,11 @@ def getMenuPath():
         if os.path.exists(path):
             return path
         else:
-            return None
+            path = "/usr/share/applications"
+            if os.path.exists(path):
+                return path
+            else:
+                return None
 
 
 class LinuxShortcut:
@@ -49,7 +52,7 @@ class LinuxShortcut:
     def setComment(self, comment):
         self.attributes["Comment"] = comment
 
-    def setIcon(self, pathToIcon):
+    def setIcon(self, pathToIcon, index = 0):
         self.attributes["Icon"] = pathToIcon
     
     def setCategories(self, categories):

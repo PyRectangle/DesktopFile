@@ -10,6 +10,7 @@ class Args:
                         Arg("-w", "--workpath", 1),
                         Arg("-c", "--comment", 1),
                         Arg("-i", "--icon", 1),
+                        Arg("-n", "--index", 1),
                         Arg("-t", "--categories", 1)]
         self.invalidValue = "invalid rarg rvalue"
         self.invalidArg = "invalid argument rarg"

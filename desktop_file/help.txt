@@ -6,4 +6,7 @@ Options:
     -w  --workpath      PATH        The folder there the command should be executed in
     -c  --comment       COMMENT     A comment for the shortcut
     -i  --icon          ICON        Path to the icon for the file
+
+Platform specific options:
+    -n  --index         INDEX       Index of the icon that it should have only affects windows lnk files
     -t  --categories    CATEGORIES  Categories the file should be listed in only affects linux desktop files
