@@ -10,3 +10,4 @@ Options:
 Platform specific options:
     -n  --index         INDEX       Index of the icon that it should have only affects windows lnk files
     -t  --categories    CATEGORIES  Categories the file should be listed in only affects linux desktop files
+    -s  --title         TITLE       Title of shortcut only affects linux desktop files

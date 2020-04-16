@@ -43,8 +43,8 @@ class LinuxShortcut:
         self.name = name
         self.path = os.path.join(path, name) + ".desktop"
         self.file = open(self.path, "w")
-        self.file.write("[Desktop Entry]\nType=Application\nName=" + self.name + "\nExec=" + self.execFile + "\n")
-        self.attributes = {"Path": None, "Comment": None, "Icon": None, "Categories": None}
+        self.file.write("[Desktop Entry]\nType=Application\nExec=" + self.execFile + "\n")
+        self.attributes = {"Path": None, "Comment": None, "Icon": None, "Categories": None, "Name": self.name}
     
     def setWorkingDirectory(self, directory):
         self.attributes["Path"] = directory
@@ -57,6 +57,9 @@ class LinuxShortcut:
     
     def setCategories(self, categories):
         self.attributes["Categories"] = categories
+
+    def setTitle(self, title):
+        self.attributes["Name"] = title
     
     def save(self):
         for attrib in self.attributes:

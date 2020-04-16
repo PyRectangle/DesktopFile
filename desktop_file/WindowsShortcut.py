@@ -41,6 +41,9 @@ class WindowsShortcut:
     
     def setCategories(self, categories):
         pass
+
+    def setTitle(self, title):
+        pass
     
     def save(self):
         if not os.path.exists(self.execFile):
