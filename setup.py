@@ -1,11 +1,8 @@
 from setuptools import setup
-import atexit
-import sys
-import os
 
 setup(
     name = "desktop_file",
-    version = "1.1",
+    version = "1.2",
     packages = ["desktop_file"],
     license = "MIT",
     include_package_data = True,

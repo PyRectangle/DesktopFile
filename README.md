@@ -15,7 +15,9 @@ You can use it in your python script like this:<br/>
 >>> desktop_file.getMenuPath()
 /home/PyRectangle/.local/share/applications
 >>> # create a xterm shortcut
->>> shortcut = desktop_file.Shortcut("/home/PyRectangle/Desktop", "XTerm", "/usr/bin/xterm")
+>>> shortcut = desktop_file.Shortcut("/home/PyRectangle/Desktop", "xterm", "/usr/bin/xterm")
+>>> # Setting the title causes the file to have a different name instead of the file name (only affects linux)
+>>> shortcut.setTitle("XTerm")
 >>> shortcut.setWorkingDirectory("/home/PyRectangle")
 >>> shortcut.setComment("A desktop file to start xterm")
 >>> # Only files that contain icons work on Windows
@@ -29,6 +31,6 @@ You will find a working shortcut named "XTerm" in the folder "/home/PyRectangle/
 ### Command
 You can use `python -m desktop_file` or `desktop-file` to create shortcuts like this:<br/>
 ```
-desktop-file --exec /usr/bin/xterm --workpath /home/PyRectangle --comment "A desktop file to start xterm" --icon /usr/share/pixmaps/mini.xterm_48x48.xpm --categories "System;" /home/PyRectangle/Desktop/XTerm.desktop
+desktop-file --exec /usr/bin/xterm --workpath /home/PyRectangle --title XTerm --comment "A desktop file to start xterm" --icon /usr/share/pixmaps/mini.xterm_48x48.xpm --categories "System;" /home/PyRectangle/Desktop/xterm.desktop
 ```
 You will need to type ".lnk" instead of ".desktop" if you are on Windows.
