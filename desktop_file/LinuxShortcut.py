@@ -3,18 +3,15 @@ import os
 
 def getDesktopPath():
     try:
-        output = os.path.expanduser("~/output")
-        os.system("xdg-user-dir DESKTOP > " + output)
-        path = open(output).read()
-        os.remove(output)
+        path = os.popen("xdg-user-dir DESKTOP").read()
     except:
         path = os.path.expanduser("~/Desktop")
     stringList = list(path)
     while stringList[-1] == "\n":
         del stringList[-1]
-        path = ""
-        for i in stringList:
-            path += i
+    path = ""
+    for i in stringList:
+        path += i
     if os.path.exists(path):
         return path
     else:
