@@ -46,8 +46,11 @@ class LinuxShortcut:
     def setWorkingDirectory(self, directory):
         self.attributes["Path"] = directory
 
-    def setComment(self, comment):
-        self.attributes["Comment"] = comment
+    def setComment(self, comment, lang=False):
+        if lang:
+            self.attributes[f"Comment[{lang}]"] = comment
+        else:
+            self.attributes["Comment"] = comment
 
     def setIcon(self, pathToIcon, index = 0):
         self.attributes["Icon"] = pathToIcon
@@ -55,11 +58,14 @@ class LinuxShortcut:
     def setCategories(self, categories):
         self.attributes["Categories"] = categories
 
-    def setTitle(self, title):
-        self.attributes["Name"] = title
+    def setTitle(self, title, lang=False):
+        if lang:
+            self.attributes[f"Name[{lang}]"] = title
+        else:
+            self.attributes["Name"] = title
     
     def save(self):
-        for attrib in self.attributes:
-            if self.attributes[attrib] != None:
-                self.file.write(attrib + "=" + self.attributes[attrib] + "\n")
+        for attrib, value in self.attributes.items():
+            if value != None:
+                self.file.write(attrib + "=" + value + "\n")
         self.file.close()
