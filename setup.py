@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = "desktop_file",
-    version = "1.2",
+    version = "1.3",
     packages = ["desktop_file"],
     license = "MIT",
     include_package_data = True,
